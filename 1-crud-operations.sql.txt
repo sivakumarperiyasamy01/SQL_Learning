@@ -1,0 +1,37 @@
+/* create a table command */
+
+create table test(sno int , name varchar(100),age int, city varchar(50));
+
+/*insert values into the table */
+
+insert into test(sno ,name,age, city) values(1,'siva',10,'tiruppur' );
+
+insert into test(sno ,name,age, city) values(2,'gow',15,'erode' );
+
+
+/* update the values into the table*/
+
+update test set name='gow',age=15 where sno=1;
+
+/* delete records from the table*/
+
+delete from test where sno=1;
+
+
+/* Get all columns and all rows from the test table*/
+
+select*from test;
+
+/* delete all records in the table except the heading we created like sno , name, age */
+
+Truncate table test;
+
+
+/* delete  the table */
+
+drop table test;
+
+
+
+
+
