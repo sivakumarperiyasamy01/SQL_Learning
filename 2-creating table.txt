@@ -1,0 +1,61 @@
+/* diffrenet ways of creating table 
+
+create table salary(sno int, name varchar(100), address varchar(50));
+
+insert into salary(sno,name,address) values(1,'siva','erode');
+
+select* from salary;  
+
+#ctas
+
+create table employee(sno int, name varchar(100),  salary int);
+
+insert into employee (sno,name,salary) values(1,'siva',1000);
+
+insert into employee(sno,name,salary) values(2,'gow',2000);
+
+insert into employee(sno,name,salary) values(3,'santhi',3000);
+
+
+/* as keywords to create table based on exisitng table records*/
+
+create table highsalary As
+
+Select sno,name,salary from employee where salary>1000;
+
+select* from highsalary;
+
+
+/*Temporary table* - temporary keyword*- insert values from another table using select keyword */
+
+create temporary table temp(sno int, name varchar(50));
+
+insert into temp  select sno, name from employee;
+
+
+select* from temp;
+
+
+/* with keyword A CTE is like a temporary named result (virtual table) that you define at the top of your query to make your SQL easier to read and reuse.   */
+
+
+with highsalary as
+( select sno, name from employee)
+
+select* from highsalary;
+
+
+create table highpackage select name from highsalary;
+
+select* from highpackage;
+
+
+  
+
+
+
+
+
+
+
+
